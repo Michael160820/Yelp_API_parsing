@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-#К сожалению с MySQL не доводилось работать. Ознакомлюсь в ближайшее время
+#К сожалению с MySQL не доводилось работать. Ознакомлюсь в ближайшее время.
 
 BASE_URL = 'https://api.yelp.com/v3/businesses/search?categories=vegan&cafe&Restaurants&location=San Francisco, CA&radius=10000&limit=50'
 API_KEY = '3PDfUGAj_aphNHC-11RO51GE1oTTO5LTz7SkKIBa4oSVcObXbtwPp86H_SKypMnJJzeLSmvVqS_G2UhW1OV0hI8D1MgWpXoqbhAlfHtRoibtna-Ed_RmZ02Jf5sNYHYx'
@@ -28,7 +28,7 @@ if __name__ == '__main__':
         print('longitude: ', cafe['coordinates']['longitude'])
         print('rating: ', cafe['rating'])
         url_google='https://www.google.com/search?q=' + (cafe['name']).replace(' ', '+') + (cafe['location']['city']).replace(' ', '+')
-        print('по этой ссылке должен был найтись адрес сайта и рейтинг google, но у меня это не получилось ' + url_google)
+        print('по этой ссылке планировал найти адрес сайта и рейтинг google ' + url_google)
         r = requests.get('https://www.google.com/search?q=' + (cafe['name']).replace(' ', '+') + (cafe['location']['city']).replace(' ', '+'))
         soup = BeautifulSoup(r.text, 'html.parser')
         mains = soup.find_all('div', {'class': 'xpdopen'})
@@ -40,4 +40,4 @@ if __name__ == '__main__':
                 print('google rate: ' + google_rate)
             except:
                 print(None)
-        print('______'*30)
+        print('______'*20)
