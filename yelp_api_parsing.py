@@ -1,6 +1,5 @@
 import requests
 from bs4 import BeautifulSoup
-#К сожалению с MySQL не доводилось работать. Ознакомлюсь в ближайшее время.
 
 BASE_URL = 'https://api.yelp.com/v3/businesses/search?categories=vegan&cafe&Restaurants&location=San Francisco, CA&radius=10000&limit=50'
 API_KEY = '3PDfUGAj_aphNHC-11RO51GE1oTTO5LTz7SkKIBa4oSVcObXbtwPp86H_SKypMnJJzeLSmvVqS_G2UhW1OV0hI8D1MgWpXoqbhAlfHtRoibtna-Ed_RmZ02Jf5sNYHYx'
